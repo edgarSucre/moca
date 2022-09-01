@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/edgarSucre/moca/domain"
+	"github.com/edgarSucre/moca/internal/domain"
 )
 
 func TestValidateAmortizationPeriod(t *testing.T) {

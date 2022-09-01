@@ -3,7 +3,7 @@ package usecase
 import (
 	"fmt"
 
-	"github.com/edgarSucre/moca/domain"
+	"github.com/edgarSucre/moca/internal/domain"
 	"github.com/go-playground/validator/v10"
 )
 

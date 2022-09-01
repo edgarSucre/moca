@@ -4,8 +4,8 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/edgarSucre/moca/domain"
-	"github.com/edgarSucre/moca/usecase"
+	"github.com/edgarSucre/moca/internal/domain"
+	"github.com/edgarSucre/moca/internal/usecase"
 	"github.com/stretchr/testify/require"
 )
 

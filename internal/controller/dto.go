@@ -7,7 +7,7 @@ type (
 		PropertyValue      float64 `json:"propertyValue"`
 		DownPayment        float64 `json:"downPayment"`
 		AnualInterestRate  float64 `json:"anualInterestRate"`
-		AmortizationPeriod int16   `json:"AmortizationPeriod"`
+		AmortizationPeriod int16   `json:"amortizationPeriod"`
 		PaymentSchedule    int16   `json:"paymentSchedule"`
 	}
 

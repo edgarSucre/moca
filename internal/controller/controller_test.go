@@ -134,3 +134,22 @@ func TestGetMortgagePayment(t *testing.T) {
 	}
 
 }
+
+func TestSpaHandler(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	defer ctrl.Finish()
+
+	uc := mock.NewMockUsecase(ctrl)
+	logger := log.WithFields(log.Fields{
+		"layer": "test",
+	})
+
+	handler := controller.New(uc, logger)
+	request := httptest.NewRequest(http.MethodGet, "/index.html", nil)
+	recorder := httptest.NewRecorder()
+
+	handler.ServeHTTP(recorder, request)
+
+	//server does not start properly from test env
+	require.Equal(t, 301, recorder.Code)
+}

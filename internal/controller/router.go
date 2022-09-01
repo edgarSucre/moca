@@ -1,8 +1,6 @@
 package controller
 
 import (
-	"net/http"
-
 	"github.com/edgarSucre/moca/internal/domain"
 	"github.com/gorilla/mux"
 	log "github.com/sirupsen/logrus"
@@ -18,13 +16,15 @@ type (
 	}
 )
 
-func New(uc Usecase, logger *log.Entry) http.Handler {
+func New(uc Usecase, logger *log.Entry) *mux.Router {
 	h := handler{
 		uc: uc,
 	}
 
+	spa := spaHandler{staticPath: "./public", indexPath: "./public/index.html"}
 	router := mux.NewRouter()
 	router.HandleFunc("/api/payment", loggerMiddleware(logger)(h.getMortgagePayment))
+	router.PathPrefix("/").Handler(spa)
 
 	return router
 }
